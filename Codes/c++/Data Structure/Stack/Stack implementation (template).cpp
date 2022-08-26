@@ -47,7 +47,7 @@ public:
     T pop(){
         Node<T> *delNode;
         delNode = top;
-        int check = -1;
+        T check;
         
         // There is no element in the Stack
         if(head==NULL){
@@ -80,10 +80,9 @@ public:
     
     // TOP
     T Top(){
-        int chk;
+        T chk;
         if(top==NULL){
             cout << "Stack Underflow | No element in Top \n";
-            chk = -1;
         }else {
             chk = top->value;
         }
@@ -108,7 +107,7 @@ int main(){
     st.Top();
     st.pop();
     
-*/
+
     Stack<char> st;
     st.push('a');
     st.push('b');
@@ -124,6 +123,35 @@ int main(){
     st.Top();
     st.pop();
     
+
+    Stack<string> st;
+    st.push("Akib Zaman");
+    st.push("Hasan Rakib");
+    st.push("Adib Hasan");
+    
+    while(!st.empty()){
+        cout << st.Top() << '\n';
+        st.pop();
+    }
+    
+    st.Top();
+    st.pop();
+    
+*/
+
+    Stack<pair<int,char>> st;
+    st.push(make_pair(1,'a'));
+    st.push(make_pair(2,'b'));
+    st.push(make_pair(3,'c'));
+    
+    while(!st.empty()){
+        cout << st.Top().first << " " << st.Top().second << '\n';
+        st.pop();
+    }
+    
+    st.Top().first;
+    st.pop().first;
+
     return 0;   
 }   
    
